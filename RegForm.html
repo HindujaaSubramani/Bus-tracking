@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <title>Sign-in Page</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #043a3b; /* Updated background color */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            max-width: 400px;
+            padding: 40px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        h1 {
+            color: #043a3b;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .social-icons a {
+            margin: 0 10px;
+            color: #043a3b;
+            font-size: 24px;
+            transition: color 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            color: #2e8182;
+        }
+
+        span {
+            display: block;
+            margin: 20px 0;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        input[type="email"],
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            font-size: 14px;
+        }
+
+        button {
+            background-color: #043a3b;
+            color: white;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        button:hover {
+            background-color: #2e8182;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <form action="home.html">
+            <h1>Sign In</h1>
+            <div class="social-icons">
+                <a href="https://www.google.com/" class="icon"><i class="fa-brands fa-google-plus-g"></i></a>
+                <a href="https://www.facebook.com/" class="icon"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="https://github.com/" class="icon"><i class="fa-brands fa-github"></i></a>
+                <a href="https://linkedin.com/" class="icon"><i class="fa-brands fa-linkedin-in"></i></a>
+            </div>
+            <span><b>or Use Your Email and College ID Card Number</b></span>
+            <input type="email" placeholder="Email" required>
+            <input type="text" placeholder="Enter ID No" required>
+            <button id="submit" onclick="redirectToLogin()">Sign In</button>
+        </form>
+    </div>
+
+    <script>
+        function redirectToLogin() {
+            history.back();
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif; /* Montserrat font */
+}
+
+/* Body Styles */
+body {
+    background: linear-gradient(to right, #e2e2e2, #c9d6ff); /* Background gradient */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh; /* Full height */
+    background-image: url('sietk.jpeg'); /* Background image */
+    background-size: cover; /* Cover the entire viewport */
+    backdrop-filter: blur(3px); /* Blur effect on the background */
+}
+
+/* Container Styles */
+.container {
+    background-color: #fff; /* White background for the container */
+    border-radius: 30px; /* Rounded corners */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35); /* Shadow for depth */
+    position: relative; /* Relative positioning for child elements */
+    overflow: hidden; /* Hide overflow */
+    width: 450px; /* Fixed width */
+    max-width: 100%; /* Responsive max width */
+    min-height: 480px; /* Minimum height */
+    background: transparent; /* Transparent background for overlay effects */
+}
+
+/* Span Styles */
+.container span {
+    font-size: 12px; /* Font size for spans */
+}
+
+/* Button Styles */
+.container button {
+    background-color: #512da8; /* Button background color */
+    color: #fff; /* Button text color */
+    font-size: 12px; /* Font size */
+    padding: 10px 45px; /* Padding for button */
+    border: 1px solid transparent; /* Transparent border */
+    border-radius: 8px; /* Rounded corners */
+    font-weight: 600; /* Bold text */
+    letter-spacing: 0.5px; /* Spacing between letters */
+    text-transform: uppercase; /* Uppercase text */
+    margin-top: 10px; /* Margin on top */
+    cursor: pointer; /* Pointer cursor on hover */
+}
+
+/* Form Styles */
+.container form {
+    background-color: #fff; /* White background for the form */
+    display: flex; /* Flex layout */
+    align-items: center; /* Center items vertically */
+    justify-content: center; /* Center items horizontally */
+    flex-direction: column; /* Vertical layout */
+    padding: 0 40px; /* Horizontal padding */
+    height: 100%; /* Full height */
+}
+
+/* Input Styles */
+.container input {
+    background-color: #fff; /* White input background */
+    border: 1px solid #c9d6ff; /* Light border color */
+    margin: 8px 0; /* Margin on top and bottom */
+    padding: 10px 15px; /* Padding for input */
+    font-size: 13px; /* Font size */
+    border-radius: 8px; /* Rounded corners */
+    width: 100%; /* Full width */
+    outline: none; /* No outline */
+}
+
+/* Animation Container */
+.form-container {
+    position: center; /* Center positioning */
+    top: 0; /* Align to top */
+    height: 100%; /* Full height */
+    transition: all 0.6s ease-in-out; /* Smooth transition */
+}
+
+/* Active Sign Up Styles */
+.container.active .sign-up {
+    transform: translateX(100%); /* Slide effect for sign-up */
+    opacity: 1; /* Full opacity */
+    z-index: 5; /* Layering */
+    animation: move 0.6s; /* Animation effect */
+}
+
+/* Move Animation */
+@keyframes move {
+    0%, 49.99% {
+        opacity: 0; /* Start invisible */
+        z-index: 1; /* Lower z-index */
+    }
+    50%, 100% {
+        opacity: 1; /* Fully visible */
+        z-index: 5; /* Higher z-index */
+    }
+}
+
+/* Social Icons Styles */
+.social-icons {
+    margin: 20px 0; /* Margin for social icons */
+}
+
+.social-icons a {
+    border: 1px solid #9cade4; /* Border for icons */
+    border-radius: 20%; /* Rounded icons */
+    display: inline-flex; /* Inline flex display */
+    justify-content: center; /* Center content */
+    align-items: center; /* Center content */
+    margin: 0 3px; /* Margin between icons */
+    width: 40px; /* Fixed width */
+    height: 40px; /* Fixed height */
+}

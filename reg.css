@@ -1,0 +1,284 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif; /* Using Poppins font */
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #081b29; /* Dark background for contrast */
+}
+
+/* Wrapper for the Form */
+.wrapper {
+    position: relative;
+    width: 750px; /* Fixed width for the form */
+    height: 450px; /* Fixed height for the form */
+    background: transparent;
+    border: 2px solid #0ef; /* Light blue border */
+    box-shadow: 0 0 25px #0ef; /* Shadow for depth */
+    overflow: hidden;
+}
+
+/* Form Boxes */
+.wrapper .form-box {
+    position: absolute;
+    top: 0;
+    width: 50%; /* Each form box takes half of the wrapper */
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Login Form Specifics */
+.wrapper .form-box.login {
+    left: 0; /* Positioning for login box */
+    padding: 0 60px 0 40px; /* Padding for login box */
+}
+
+.wrapper .form-box.login .animation {
+    transform: translateX(0);
+    opacity: 1;
+    filter: blur(0);
+    transition: .7s ease; /* Smooth transition */
+}
+
+.wrapper.active .form-box.login .animation {
+    transform: translateX(-120%); /* Slide out effect */
+    opacity: 0;
+    filter: blur(10px);
+    transition-delay: calc(.1s * var(--i)); /* Delay for animation */
+}
+
+/* Registration Form Specifics */
+.wrapper .form-box.register {
+    right: 0; /* Positioning for register box */
+    padding: 0 40px 0 60px; /* Padding for register box */
+    display: none; /* Initially hidden */
+}
+
+/* Headings */
+.form-box h2 {
+    font-size: 32px; /* Font size for headings */
+    color: #fff; /* White text */
+    text-align: center; /* Centered text */
+}
+
+/* Input Box Styling */
+.form-box .input-box {
+    position: relative;
+    width: 100%; /* Full width input */
+    height: 50px; /* Height of input box */
+    margin: 25px 0; /* Margin around input */
+}
+
+.input-box input {
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background: transparent; /* Transparent background */
+    border: none; /* No border */
+    outline: none; /* No outline */
+    padding-right: 23px; /* Padding for right side */
+    border-bottom: 2px solid #fff; /* Bottom border */
+    padding-left: 25px; /* Padding for left side */
+    color: #fff; /* White text */
+    font-size: 16px; /* Font size */
+    font-weight: 500; /* Font weight */
+    transition: .5s; /* Transition for border color */
+}
+
+.input-box input:focus,
+.input-box input:valid {
+    border-bottom-color: #0ef; /* Bottom border color on focus */
+}
+
+/* Label Styles */
+.input-box label {
+    position: absolute; /* Absolute position for labels */
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%); /* Centering label */
+    font-size: 16px; /* Font size for labels */
+    color: #fff; /* White text */
+    pointer-events: none; /* Prevent interactions */
+    transition: .5s; /* Transition for label movement */
+}
+
+.input-box input:focus~label,
+.input-box input:valid~label {
+    top: -5px; /* Move label up when focused or valid */
+    color: #0ef; /* Change label color */
+}
+
+/* Icon Styling */
+.input-box i {
+    position: absolute; /* Position for icons */
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%); /* Centering icon */
+    font-size: 18px; /* Font size for icons */
+    color: #fff; /* White icon color */
+    transition: .5s; /* Transition for icon color */
+}
+
+.input-box input:focus~i,
+.input-box input:valid~i {
+    color: #0ef; /* Change icon color */
+}
+
+/* Button Styling */
+.btn {
+    position: relative; /* Relative positioning */
+    width: 100%; /* Full width button */
+    height: 45px; /* Height of button */
+    background: transparent; /* Transparent background */
+    border: 2px solid #0ef; /* Border color */
+    outline: none; /* No outline */
+    border-radius: 40px; /* Rounded corners */
+    cursor: pointer; /* Cursor pointer */
+    font-size: 16px; /* Font size */
+    color: #fff; /* White text */
+    font-weight: 600; /* Font weight */
+    z-index: 1; /* Z-index for layering */
+    overflow: hidden; /* Hide overflow */
+}
+
+/* Button Hover Effect */
+.btn::before {
+    content: '';
+    position: absolute; /* Absolute positioning */
+    top: -100%; /* Start above */
+    left: 0;
+    width: 100%; /* Full width */
+    height: 300%; /* Height for hover effect */
+    background: linear-gradient(#081b29, #0ef, #081b29, #0ef); /* Gradient effect */
+    z-index: -1; /* Behind button */
+    transition: .5s; /* Transition for effect */
+}
+
+.btn:hover::before {
+    top: 0; /* Move down on hover */
+}
+
+/* Link Styles */
+.form-box .logreg-link {
+    font-size: 14.5px; /* Font size for links */
+    color: #fff; /* White text */
+    text-align: center; /* Centered text */
+    margin: 20px 0 10px; /* Margin around links */
+}
+
+.logreg-link p a {
+    color: #0ef; /* Link color */
+    text-decoration: none; /* No underline */
+    font-weight: 600; /* Font weight */
+}
+
+.logreg-link p a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+/* Info Text for Login/Registration */
+.wrapper .info-text {
+    position: absolute; /* Positioning for info text */
+    top: 0;
+    width: 50%; /* Half width */
+    height: 100%;
+    background: transparent; /* Transparent background */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center content */
+}
+
+/* Login Info Text */
+.wrapper .info-text.login {
+    right: 0; /* Positioning for login info */
+    text-align: right; /* Right aligned text */
+    padding: 0 40px 60px 150px; /* Padding for login info */
+}
+
+.wrapper .info-text.login .animation {
+    transform: translateX(0); /* Default state */
+    opacity: 1; /* Fully visible */
+    filter: blur(0); /* No blur */
+    transition: .7s ease; /* Smooth transition */
+}
+
+.wrapper.active .info-text.login .animation {
+    transform: translateX(-120%); /* Slide out effect */
+    opacity: 0; /* Fade out */
+    filter: blur(10px); /* Blur on exit */
+    transition-delay: calc(.1s * var(--i)); /* Delay for animation */
+}
+
+/* Registration Info Text */
+.wrapper .info-text.register {
+    left: 0; /* Positioning for register info */
+    text-align: left; /* Left aligned text */
+    padding: 0 150px 60px 40px; /* Padding for register info */
+    display: none; /* Initially hidden */
+}
+
+/* Headings in Info Text */
+.info-text h2 {
+    font-size: 36px; /* Font size for headings */
+    color: #fff; /* White text */
+    line-height: 1.3; /* Line height for clarity */
+    text-transform: uppercase; /* Uppercase text */
+}
+
+/* Paragraph Text in Info Text */
+.info-text p {
+    font-size: 16px; /* Font size for paragraph */
+    color: #fff; /* White text */
+}
+
+/* Background Animation */
+.wrapper .bg-animate {
+    position: absolute; /* Positioning for background */
+    top: -4px; /* Offset for visual effect */
+    right: 0; /* Positioning */
+    width: 850px; /* Width of animated background */
+    height: 600px; /* Height of animated background */
+    background: linear-gradient(45deg, #081b29, #0ef); /* Gradient effect */
+    border-bottom: 3px solid #0ef; /* Bottom border */
+    transform: rotate(10deg) skewY(40deg); /* Skew effect */
+    transform-origin: bottom right; /* Origin for transform */
+}
+
+/* Secondary Background Animation */
+.wrapper .bg-animate2 {
+    position: absolute; /* Positioning for second background */
+    top: 100%; /* Positioned below the first background */
+    left: 250px; /* Offset */
+    width: 850px; /* Width of background */
+    height: 700px; /* Height of background */
+    background: #081b29; /* Dark background */
+    border-top: 3px solid #0ef; /* Top border */
+    transform: rotate(0) skewY(0); /* No skew for the second background */
+    transform-origin: bottom left; /* Origin for transform */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
